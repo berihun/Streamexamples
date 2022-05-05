@@ -5,11 +5,13 @@ import java.util.stream.Stream;
 
 public class Inventory {
     public static void main(String[] args) {
-
-        System.out.println("hi there!");
+//this example show how we use java in functional programming
+        //arraylist variables
         List<Apple> result = new ArrayList<>();
         List<Apple> resultNew = new ArrayList<>();
+        //array variable
         Apple a = new Apple("green", 152);
+        //add object to the arraylist
         result.add(a);
         a = new Apple("green", 123);
         result.add(a);
@@ -26,22 +28,28 @@ public class Inventory {
         a = new Apple("skyblue", 58);
         result.add(a);
 
+        //create new object/instance of Apple class
         Apple c = new Apple();
+        //show data
         System.out.println("all: " + result);
+        //using stream to filter only green apple whose wieght is >150
         List<Apple> greenApples = result
                 .stream()
                 .filter(apple -> "green".equals(apple.getColor()) && apple.getWeight() > 150)
                 .collect(Collectors.toList());
 
         System.out.println("filter by java 8 steam : " + greenApples);
+        //example how we might solve the green apple filtering using the imperative approach
         System.out.println("filtered traditional way: " + filterApplesByColor(result, "green"));
+      //array of integer
         int[] s = {1, 2, 3, 4, 5};
 //        List<Integer> evenNumbers = Arrays.stream(s)
 //                .filter(i -> i % 2 == 0)
-//                .collect(Collectors.toA());
+//                .toArray(Collectors.toa);
+       //sorting using comparing in reverse order
         result.sort(Comparator.comparing(Apple::getWeight).reversed());
         System.out.println("after sorting: " + result);
-
+// filter and sort   apple using wieght and  then show only color of apple
         List<String> lowCaloricDishesName =
                 result.parallelStream()
                         .filter(d -> d.getWeight() < 400)
@@ -79,7 +87,7 @@ public class Inventory {
         System.out.println("foreach statement with println.......");
 
         allAplles.stream().forEach(System.out::println);
-        String k="Hello { There { Is everything { goind well!";
+        String k = "Hello { There { Is everything { goind well!";
         String[] kk = Arrays.stream(k.split("\\{+"))
                 .map(String::toLowerCase)
                 .toArray(String[]::new);
@@ -137,7 +145,7 @@ public class Inventory {
         System.out.println("min=" + minNumber);
 
         //count
-        long countNumber = Stream.of(0,1, 2, 3, 4, 5, 6, 7, 8, 9)
+        long countNumber = Stream.of(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
                 .count();
         System.out.println("count=" + countNumber);
     }
