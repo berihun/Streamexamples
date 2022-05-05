@@ -1,9 +1,10 @@
 public class Apple {
     private String color;
-private double weight;
+    private double weight;
+
     public Apple(String color, double weight) {
         this.color = color;
-        this.weight=weight;
+        this.weight = weight;
     }
 
     public Apple() {
