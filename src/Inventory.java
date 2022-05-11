@@ -91,6 +91,7 @@ public class Inventory {
         String[] kk = Arrays.stream(k.split("\\{+"))
                 .map(String::toLowerCase)
                 .toArray(String[]::new);
+        //hi
 
         System.out.println("split json data by curly brace, size is: " + kk.length);
         for (String j : kk)
