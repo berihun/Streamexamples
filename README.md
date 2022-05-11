@@ -1,2 +1,2 @@
 # Streamexamples
-this example show how we use java in functional programming 
+This project contains more example on how we use java in functional programming approach.
